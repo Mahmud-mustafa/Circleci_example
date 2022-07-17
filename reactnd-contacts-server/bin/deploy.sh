@@ -1,2 +1,2 @@
-eb use project-app
+eb use projectapp-env
 eb deploy
