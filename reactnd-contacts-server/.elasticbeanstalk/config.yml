@@ -1,5 +1,5 @@
 branch-defaults:
-  lesson-2-exercise-1:
+  main:
     environment: Projectapp-env
 environment-defaults:
   Projectapp-env:
