@@ -1,19 +1,19 @@
 branch-defaults:
   lesson-2-exercise-1:
-    environment: Test3-env
+    environment: Projectapp-env
 environment-defaults:
-  Test3-env:
+  Projectapp-env:
     branch: null
     repository: null
 global:
-  application_name: test3
+  application_name: project-app
   default_ec2_keyname: null
-  default_platform: Node.js 12 running on 64bit Amazon Linux 2
-  default_region: us-east-2
+  default_platform: Node.js 16 running on 64bit Amazon Linux 2
+  default_region: us-east-1
   include_git_submodules: true
   instance_profile: null
   platform_name: null
   platform_version: null
-  profile: null
+  profile: eb-cli
   sc: git
   workspace_type: Application
