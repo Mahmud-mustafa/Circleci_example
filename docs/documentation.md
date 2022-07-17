@@ -3,6 +3,15 @@
 ## Infrasturcture requirements
 
 The app requires a running aws account with access to the following services; aws RDS, aws S3, and aws Elastic Beanstalk.
+<br>
+The app also uses Circleci for CI/CD.
+
+## App dependencies
+
+The app depends mainly on Nodejs as its running platform with NPM as the package manager needed to install the various dependencies in all the package.json files present in the app as well as running scripts in package.json files.
+
+<br>
+The app uses postgres as its database system.
 
 ## Pipeline steps
 
