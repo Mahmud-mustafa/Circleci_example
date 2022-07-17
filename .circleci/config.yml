@@ -15,7 +15,6 @@ jobs:
       - node/install
       - checkout
       - aws-cli/setup
-      - aws-elastic-beanstalk/setup
       - run:
           name: Front-End Install
           command: |
