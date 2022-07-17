@@ -4,6 +4,7 @@ filters:
     only:
       - main
 orbs:
+  # These orbs set required dependencies including node, aws-cli, and eb-cli
   node: circleci/node@4.1.0
   aws-cli: circleci/aws-cli@1.3.1
   eb: circleci/aws-elastic-beanstalk@2.0.1
@@ -15,6 +16,7 @@ jobs:
       - node/install
       - checkout
       - aws-cli/setup
+      # The following step installs eb-cli
       - run:
           name: Installing deployment dependencies
           working_directory: /
@@ -22,6 +24,7 @@ jobs:
             sudo apt-get -y -qq update
             sudo apt-get install python3-pip python3-dev build-essential
             sudo pip3 install awsebcli
+      # The next two steps install dependencies in the package.json file in both the front-end and back-end of the app
       - run:
           name: Front-End Install
           command: |
@@ -30,6 +33,7 @@ jobs:
           name: Back-End Install
           command: |
             npm run backend:install
+      # The next two steps build the front-end and back-end of the app respectively
       - run:
           name: Front-End Build
           command: |
@@ -38,6 +42,7 @@ jobs:
           name: Back-End Build
           command: |
             npm run backend:build
+      # These last steps deploy the app to aws s3 and to elastic beanstalk respectively
       - run:
           name: Deploy app
           command: |
